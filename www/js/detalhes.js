@@ -78,5 +78,5 @@ $(".add-cart").on('click', function(){
 
 });
 
-// teste//
+
 
