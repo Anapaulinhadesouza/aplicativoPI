@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar (Android only) -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>Template Tab</title>
+    <!-- Path to Framework7 Library Bundle CSS -->
+    <link rel="stylesheet" href="lib/framework7-bundle.min.css">
+    <!-- CSS PERSONALIZADO PARA MENU-->
+    <link rel="stylesheet" href="css/index.css">
+    <!--Ícones Material Design-->
+    <link rel="stylesheet" href="css/materialdesignicons.min.css">
+    <!--Icones do Remix Icon-->
+    <link rel="stylesheet" href="css/remixicon/remixicon.css">
+
+
+<body>
+    <!-- App root element -->
+    <div id="app">
+
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+
+
+            
+
+            <!-- Initial Page, "data-name" contains page name -->
+            <div data-name="detalhes" class="page color-theme-green">
+              <!-- TAB BAR-->
+            <div class="toolbar toolbar-bottom">
+              <div class="toolbar-inner display-flex align-items-center justify-content-center">
+                  <div class="flex-40 text-align-center">
+                    <span id= "preco-detalhe" class="riscado color-gray">R$1400</span>
+                       <h3 id= "precopromo-detalhe" class="princing no-padding no-margin">R$ 1200</h3>
+                  </div>
+                  <div class="flex-60">
+                    <button  class="add-cart">Adicionar Carrinho</button>
+                  </div>
+              </div>
+          </div>
+
+            <!-- Scrollable page content -->
+                <div class="page-content">
+                  <div class="prod-detail">
+                    <div class="buttons-top">
+                      <a href="/index/"><i class="ri-arrow-left-s-line"></i></a>
+                      <a href="#"><i class="ri-heart-3-line"></i></a>
+                      <a href="#"><i class="ri-share-2-line"></i></a>
+                    </div>
+                    <img id="imagem-detalhe" src="img/default.png">
+                  </div>
+                  <div class="prod-content">
+                    <div class="block">
+                      <div class="line padding-top">
+                        <b id="nome-detalhe" class="margin-left">Nome do Produto</b>
+                        <button class="promo-btn">Promoção</button>
+                      </div>
+                      <div class="margin-top display-flex align-items-center justify-content-start">
+                        <button class=" margin-left btn-rates"><i class="mdi mdi-star"></i> <span 
+                          id="rating-detalhe"> 4.8</span></button>
+                        <button class="btn-rates"><i class="ri-thumb-up-fill"></i></span
+                          id="like-detalhe"> 90%</span></button>
+                        <span id="reviews-detalhe"class="color-gray">110 reviews</span>
+                      </div>
+                      <div class="display-flex align-items-center justify-content-center">
+                        <p id="descricao-detalhe">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero earum praesentium molestias facilis sequi quia provident mollitia aspernatur exercitationem eveniet officiis ratione, magni iste repudiandae, enim alias sint impedit! Repudiandae?</p>
+                      </div>
+
+                      <table id="tabdetalhes">
+                        <tr>
+                          <th>Característica</th>
+                          <th>Detalhes</th>
+                        </tr>
+                        
+                       
+                      </table>
+                    </div>
+                  
+               </div> 
+           </div>
+       </div>
+   </div>
+                     <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img class="img-fluid" src="img/propaganda.png">
+      </div>
+      <div class="swiper-slide">
+        <img class="img-fluid" src="img/propaganda2.png">
+      </div>
+      <div class="swiper-slide">
+        <img class="img-fluid" src="img/propaganda3.png">
+      </div>
+      <div class="swiper-slide">
+        <img class="img-fluid" src="img/propaganda4.png">
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="display-flex align-items-center justify-content-space-between">
+    <h2>Categorias</h2>
+    <a href="#">Veja todas <i class="mdi mdi-arrow-right"></i></a>
+  </div>  
+
+   <!-- Swiper -->
+  <div class="swiper Categorias">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <button class="filter-btn active">
+            Todas 
+        </button>
+      </div>
+      <div class="swiper-slide">
+        <button class="filter-btn">
+          Celulares
+        </button>
+      </div>
+      <div class="swiper-slide">
+        <button class="filter-btn">
+          Laptops
+        </button>
+      </div>
+      <div class="swiper-slide">
+        <button class="filter-btn">
+          Smartwatches
+        </button>
+      </div>
+      <div class="swiper-slide">
+        <button class="filter-btn">
+          Fones de Ouvido
+        </button>
+      </div>
+      <div class="swiper-slide">
+        <button class="filter-btn">
+          Tablets
+        </button>
+      </div>
+      <div class="swiper-slide">
+        <button class="filter-btn">
+          Notebooks
+        </button>
+      </div>
+      <div class="swiper-slide">
+        <button class="filter-btn">
+          Câmeras Fotográficas
+        </button>
+      </div>
+      <div class="swiper-slide">
+        <button class="filter-btn">
+          Videogames
+        </button>
+      </div>
+      <div class="swiper-slide">
+        <button class="filter-btn">
+          Acessórios para Celulares
+        </button>
+      </div>
+      <div class="swiper-slide">
+        <button class="filter-btn">
+          Roteadores Wi-Fi
+        </button>
+      </div>
+      <div class="swiper-slide">
+        <button class="filter-btn">
+          Impressoras
+        </button>
+      </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+    <div>
+      
+    <div id="produtos" class="margin-top row display-flex align-items-center justify-content-start">
+
+      <!--Item Card-->
+      <div class="Item-card"> 
+        <a href="#" class="item">
+          <div class="img-container">
+            <img src="img/airpod.png">
+          </div>
+          <div class="nome-rating">
+            <span class="color-gray">Airpod</span>
+            <span class="bold margin-righ">
+            <i class="mdi mdi-star"></i>
+            4.8
+            </span>
+          </div>
+          <div class="price bold">R$ 299</div>
+          </a>
+       </div>
+       </div>
+      <!--Item Card-->
+      <div class="Item-card">
+        <a href="#" class="item">
+          <div class="img-container">
+            <img src="img/xbox.png">
+          </div>
+          <div class="nome-rating">
+            <span class="color-gray">Xbox Series x</span>
+            <span class="bold margin-righ">
+            <i class="mdi mdi-star"></i>
+            4.8
+            </span>
+          </div>
+          <div class="price bold">R$ 299</div>
+          </a>
+       </div>
+      </div>
+       <!--Item Card-->
+      <div class="Item-card"> 
+        <a href="#" class="item">
+          <div class="img-container">
+            <img src="img/macbook.png">
+          </div>
+          <div class="nome-rating">
+            <span class="color-gray">Macbook</span>
+            <span class="bold margin-righ">
+            <i class="mdi mdi-star"></i>
+            4.8
+            </span>
+          </div>
+          <div class="price bold">R$ 299</div>
+          </a>
+       </div>
+       </div>
+
+       <!--Item Card-->
+      <div class="Item-card"> 
+        <a href="#" class="item">
+          <div class="img-container">
+            <img src="img/iphone.png">
+          </div>
+          <div class="nome-rating">
+            <span class="color-gray">Iphone</span>
+            <span class="bold margin-righ">
+            <i class="mdi mdi-star"></i>
+            4.8
+            </span>
+          </div>
+          <div class="price bold">R$ 299</div>
+          </a>
+       </div>
+      </div>
+        <br><br><br><br><br><br><br><br><br>
+      
+    </div>
+  </div>
+  
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Path to Framework7 Library Bundle JS-->
+    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
+	<!-- jQuery -->
+	<script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>	
+    <!-- Roteamento do app-->
+    <script type="text/javascript" src="js/routes.js"></script>
+    <script src="cordova.js"></script>
+</body>
+
+</html>
