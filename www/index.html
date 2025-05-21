@@ -435,6 +435,58 @@
             document.getElementById('menuAcessibilidade').classList.remove('menu-aberto');
         });
     </script>
+    <script>
+     // Recupera o carrinho do localStorage ou inicializa um array vazio
+let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+// Função para atualizar o estado do botão de comprar
+function atualizarBotaoComprar() {
+    const btnComprar = document.querySelector('.add-cart'); // Seleciona o botão de comprar
+    if (carrinho.length > 0) {
+        btnComprar.disabled = false; // Habilita o botão
+    } else {
+        btnComprar.disabled = true; // Desabilita o botão
+    }
+}
+
+// Função para adicionar item ao carrinho
+function adicionarAoCarrinho(item) {
+    carrinho.push(item); // Adiciona o item ao carrinho
+    localStorage.setItem('carrinho', JSON.stringify(carrinho)); // Atualiza o localStorage
+    atualizarBotaoComprar(); // Atualiza o estado do botão
+}
+
+// Função para remover item do carrinho
+function removerDoCarrinho(index) {
+    carrinho.splice(index, 1); // Remove o item do carrinho
+    localStorage.setItem('carrinho', JSON.stringify(carrinho)); // Atualiza o localStorage
+    atualizarBotaoComprar(); // Atualiza o estado do botão
+}
+
+// Função para esvaziar o carrinho
+document.getElementById('esvaziar').addEventListener('click', function () {
+    carrinho = []; // Esvazia o carrinho
+    localStorage.setItem('carrinho', JSON.stringify(carrinho)); // Atualiza o localStorage
+    atualizarBotaoComprar(); // Atualiza o estado do botão
+});
+
+// Evento de clique no botão de comprar
+document.querySelector('.add-cart').addEventListener('click', function () {
+    if (carrinho.length > 0) {
+        // Redireciona para a tela de checkout
+        window.location.href = '/checkout';
+    } else {
+        alert('Seu carrinho está vazio! Adicione itens para finalizar a compra.');
+    }
+});
+
+// Atualiza o botão ao carregar a página
+document.addEventListener('DOMContentLoaded', function () {
+    atualizarBotaoComprar();
+});
+
+    </script>
+    
 </body>
 
 </html>
