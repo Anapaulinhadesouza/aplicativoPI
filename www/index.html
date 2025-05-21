@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
     <!-- Color theme for statusbar (Android only) -->
     <meta name="theme-color" content="#2196f3">
     <!-- Your app title -->
@@ -21,15 +21,113 @@
     <link rel="stylesheet" href="css/materialdesignicons.min.css">
     <!--Icones do Remix Icon-->
     <link rel="stylesheet" href="css/remixicon/remixicon.css">
-
+    <style>
+        /* Estilos para o botão de acessibilidade */
+        .acessibilidade-container {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            z-index: 9999;
+        }
+        
+        .botao-acessibilidade {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: #2196f3;
+            color: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            font-size: 20px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .botao-acessibilidade:hover {
+            transform: scale(1.1);
+        }
+        
+        .menu-acessibilidade {
+            position: absolute;
+            bottom: 60px;
+            right: 0;
+            width: 200px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .menu-acessibilidade a {
+            padding: 12px 15px;
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: all 0.2s;
+        }
+        
+        .menu-acessibilidade a:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .menu-acessibilidade a i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .menu-aberto {
+            display: flex;
+        }
+        
+        /* Estilos para o modo daltônico */
+        .daltonico-mode {
+            filter: url(#protanopia);
+        }
+        
+        /* Estilos para aumento de fonte */
+        .fonte-grande-1 {
+            font-size: 1.2em;
+        }
+        
+        .fonte-grande-2 {
+            font-size: 1.4em;
+        }
+        
+        .fonte-grande-3 {
+            font-size: 1.6em;
+        }
+        
+        .fonte-grande-1 .item-card,
+        .fonte-grande-2 .item-card,
+        .fonte-grande-3 .item-card {
+            font-size: inherit;
+        }
+    </style>
+</head>
 
 <body>
     <!-- App root element -->
     <div id="app">
 
         <!-- Your main view, should have "view-main" class -->
+       
+        <!--Botão acessivel SVG-->
         <div class="view view-main">
-
+          <svg style="position: absolute; height: 0; width: 0;">
+            <filter id="protanopia">
+                <feColorMatrix type="matrix"
+                    values="0.567, 0.433, 0, 0, 0
+                            0.558, 0.442, 0, 0, 0
+                            0, 0.242, 0.758, 0, 0
+                            0, 0, 0, 1, 0">
+                </feColorMatrix>
+            </filter>
+        </svg>
 
             <!-- TAB BAR-->
             <div id="menuPrincipal" class="toolbar toolbar-bottom">
@@ -52,12 +150,28 @@
                     </a>
                 </div>
             </div>
+            
+            <!-- Botão de Acessibilidade com Menu -->
+            <div class="acessibilidade-container">
+                <a href="#" class="botao-acessibilidade" id="toggleAcessibilidade">
+                    <i class="mdi mdi-accessibility"></i>
+                    ♿
+                </a>
+                <div class="menu-acessibilidade" id="menuAcessibilidade">
+                    <a href="#" id="aumentarFonte">
+                        <i class="mdi mdi-format-size"></i> Aumentar Fonte
+                    </a>
+                    <a href="#" id="modoDaltonico">
+                        <i class="mdi mdi-eye-outline"></i> Modo Daltônico
+                    </a>
+                    <a href="#" id="leituraTela">
+                        <i class="mdi mdi-text-to-speech"></i> Leitura de Tela
+                    </a>
+                </div>
+            </div>
 
             <!-- Initial Page, "data-name" contains page name -->
             <div data-name="index" class="page color-theme-green">
-
-
-
 
                 <!--Nav Topo-->
                 <div class="top-nav">
@@ -72,9 +186,10 @@
                     <input id="search" placeholder="O que você procura?" type="text">
                     <i class="icone-busca ri-search-2-line"></i>
                 </form>
-  <!-- Scrollable page content -->
+  
+                <!-- Scrollable page content -->
                 <div class="page-content">
-                    <div class="block not-margin-top">
+                    <div class="block not-margin-top">                    <link rel="icon" href="data:,">                    <meta name="apple-mobile-web-app-capable" content="yes">                    <meta name="mobile-web-app-capable" content="yes">                    <meta name="mobile-web-app-capable" content="yes">
                  <!-- Swiper -->
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
@@ -252,19 +367,74 @@
         </div>
     </div>
 
-
-
-   
     <!-- Path to Framework7 Library Bundle JS-->
     <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
-     <!-- jQuery -->
-	<script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>
-  
-  <!-- Path to Framework7 Library Bundle JS-->
-	  
+    <!-- jQuery -->
+    <script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>
     <!-- Roteamento do app-->
     <script type="text/javascript" src="js/routes.js"></script>
     <script src="cordova.js"></script>
+    
+    <script>
+        // Controle do Menu de Acessibilidade
+        document.getElementById('toggleAcessibilidade').addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            document.getElementById('menuAcessibilidade').classList.toggle('menu-aberto');
+        });
+        
+        // Fechar menu quando clicar fora
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.acessibilidade-container')) {
+                document.getElementById('menuAcessibilidade').classList.remove('menu-aberto');
+            }
+        });
+        
+        // Controle do Tamanho da Fonte
+        let currentFontSize = 0;
+        const maxFontSize = 3;
+        
+        document.getElementById('aumentarFonte').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if(currentFontSize < maxFontSize) {
+                currentFontSize++;
+                document.body.classList.add(`fonte-grande-${currentFontSize}`);
+                // Remove classes anteriores
+                for(let i = currentFontSize - 1; i > 0; i--) {
+                    document.body.classList.remove(`fonte-grande-${i}`);
+                }
+            } else {
+                // Reset para tamanho normal
+                currentFontSize = 0;
+                document.body.className = document.body.className.replace(/fonte-grande-\d/g, '');
+            }
+            
+            // Fechar menu após seleção
+            document.getElementById('menuAcessibilidade').classList.remove('menu-aberto');
+        });
+        
+        // Controle do Modo Daltonico
+        let daltonicoAtivo = false;
+        document.getElementById('modoDaltonico').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.body.classList.toggle('daltonico-mode');
+            this.querySelector('i').classList.toggle('mdi-eye-outline');
+            this.querySelector('i').classList.toggle('mdi-eye-off-outline');
+            
+            // Fechar menu após seleção
+            document.getElementById('menuAcessibilidade').classList.remove('menu-aberto');
+        });
+        
+        // Controle da Leitura de Tela (simulado)
+        document.getElementById('leituraTela').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Leitura de tela ativada. Esta é uma funcionalidade simulada. Em um ambiente real, isso ativaria o leitor de tela do dispositivo.');
+            
+            // Fechar menu após seleção
+            document.getElementById('menuAcessibilidade').classList.remove('menu-aberto');
+        });
+    </script>
 </body>
 
 </html>
